@@ -104,25 +104,22 @@ main.content {
 .port-page .thumb:hover::before {
   background: rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  /*border-radius: 5px;*/
 }
-/*.port-page .thumb:hover {
-  border-radius: 5px;
-}
-.port-page .thumb:hover img {
-  border-radius: 5px;
-}*/
 .port-page .thumb img {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
   max-width: 100%;
+  min-height: 136px;
 }
 .port-page .caption {
   display: block;
   color: #898989;
   max-width: 100%;
   margin: 1em auto 0;
+}
+.port-page {
+  height: 100%;
 }
 /* END PORT TITLE */
 /*PORT BRAND INFO*/

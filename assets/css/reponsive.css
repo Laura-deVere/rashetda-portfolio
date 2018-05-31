@@ -46,11 +46,15 @@
 @media(max-width: 640px) {
 	body {
 		font-size: 16px;
-		line-height: 34px;
+		line-height: 23px;
 	}
 	main.content {
 		padding-top: 1em;
 		padding-bottom: 1em;
+	}
+	main .infor p {
+		padding-bottom: 1em;
+		line-height: 26px;
 	}
 	.contactus-page .block-title {
 		padding-bottom: 0;
@@ -71,6 +75,11 @@
 	.block-title {
 		margin-bottom: 0.5em;
 	}
+}
+@media(max-width: 440px) {
+	.social {
+		padding: 2.7em 0;
+	}	
 }
 @media(min-width: 768px) {
 	.home-page .page-content-wrapper {
@@ -129,10 +138,7 @@
 	}
 }
 @media(min-width: 1500px) {
-	.page-content-wrapper {
-		width: 80%;
-	}
-	.sidebar-wrapper {
-		width: 20%;
+	.hamburger-wrapper.out {
+		left: 44%
 	}
 }

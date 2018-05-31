@@ -58,7 +58,8 @@ $(document).ready(function() {
     });
     if($(window).width()<=768) {
         document.addEventListener('touchstart', function() {
-           $('.port-btn a').text('rashedta cambridge');
+           // $('.port-btn').css({color:'#fff'});
+           $('.port-btn').toggleClass('mobile');
        });       
     }
 });

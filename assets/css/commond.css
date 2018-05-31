@@ -147,6 +147,10 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 5em;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 }
 .navbar-toggle {
   position: absolute;
@@ -161,8 +165,9 @@ body {
 .hamburger-inner::after {
   background: #737474;
 }
-.disable-scroll {
+.content.disable-scroll {
   height: 0vh;
+  padding-bottom: 0px;
 }
 /* Sidebar Styles */
 .sidebar-nav {
@@ -223,7 +228,7 @@ footer {
   width: 100%;
 }
 .inner-footer {
-  position: relative;
+  /*position: relative;*/
   height: 7em;
 }
 .inner-footer::before {
@@ -257,6 +262,15 @@ footer {
 .port-btn a::after{
   content: "see her work";
   transition: 0.9s;
+}
+.port-btn.mobile button {
+  background-color: #df7500;
+}
+.port-btn.mobile a {
+  color: #fff;
+}
+.port-btn.mobile a::after {
+  content: "rashetda cambridge";
 }
 /*END LINK TO PORTFOLIO*/
 .social {
