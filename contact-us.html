@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cambridge - Contact Us</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/hamburgers.css">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/commond.css">
+        <link rel="stylesheet" href="assets/css/stylesheet.css">
+        <link rel="stylesheet" href="assets/css/reponsive.css">
+        <script src="assets/js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="assets/js/jquery-validate.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/slick.min.js"></script>
+        <script src="assets/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Menu Toggle Script -->
+    </head>
+    <body class="contactus-page sub-page">
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <div class="sidebar-wrapper bg-sidebar-home">
+                <div class="inner-sidebar">
+                    <div class="hamburger-wrapper">
+                        <div class="web-hamburger" id="hamburger-9">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                        <p>MENU</p>
+                    </div>
+                    <ul class="sidebar-nav">
+                        <li><a href="./about-us.html" class="icons icon-about" title="About us">&nbsp;</a></li>
+                        <li><a href="./port-tiles.html" class="icons icon-portfolio" title="Porfolio">&nbsp;</a></li>
+                        <li class="active"><a href="./contact-us.html" class="icons icon-contact" title="Contact us">&nbsp;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+            <!-- Page Content -->
+            <div class="page-content-wrapper">
+                <header>
+                    <div class="content">
+                        <button class="hamburger hamburger--collapse navbar-toggle visible-xs" data-toggle="collapse" data-target="#myNavbar">
+                            <div class="hamburger-box">
+                              <div class="hamburger-inner"></div>
+                            </div>
+                        </button>
+                        <a href="./index.html" class="logo" title="Cambridge"><img src="assets/images/icons/logo.svg" alt="Cambridge"></a>
+                    </div>
+                </header>
+                <main class="content">
+                    <div class="row mess-send-mail">
+                        <div class="col-sm-12">
+                            <h2 class="block-title"></h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 title">
+                            <h2 class="block-title">need help?</h2>
+                            <h2 class="block-title">fill out the form for a prompt response.</h2>
+                            <h2 class="block-title">Best.</h2>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-1 infor">
+                            <form class="form frm-contact" id="frm-contact" action="sendmail.php" method="POST" class="form-horizontal">
+                                <div class="form-group">
+                                    <input class="form-control" name="name" type="text" placeholder="name">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="email" type="text" placeholder="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" name="subject" type="text" placeholder="subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="4" placeholder="message"></textarea>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button class="btn" name="submit" type="submit" placeholder="submit">submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <div class="inner-footer">
+                        <ul class="social list-inline">
+                            <li><a href="https://www.linkedin.com/in/rashetdacambridge" class="icons icon-linkedin" title="Linkedin"></a></li>
+                            <li><a href="https://twitter.com/rdotgalofdesign" class="icons icon-twitter" title="twitter"></a></li>
+                            <li><a href="https://www.linkedin.com/in/rashetdacambridge" class="icons icon-blog" title="Blog"></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#frm-contact").validate({
+                    rules: {
+                        "email": {
+                            required: true,
+                            email: true
+                        },  
+                        "name": {
+                            required: true
+                        },  
+                        "subject": {
+                            required: true
+                        },  
+                        "message": {
+                            required: true,
+                            minlength: 10
+                        }
+                    },
+                    //perform an AJAX post to sendmail.php
+                    submitHandler: function(e) {
+                        $('.content').find('.mess-send-mail').css('opacity',0);
+                        $('.content').find('.mess-send-mail h2').removeClass('error');
+                        $('form#frm-contact').find('button[type=submit]').attr('disabled', 'disabled');
+                        $.post(
+                            $('form#frm-contact').attr('action'), 
+                            $('form#frm-contact').serialize() , 
+                            function(data){
+                                if(data.msg_error!=null){
+                                    $('.content').find('.mess-send-mail h2').text(data.msg_error);
+                                    $('.content').find('.mess-send-mail h2').addClass(' error');
+                                } else {
+                                    $('.content').find('.mess-send-mail h2').text(data.msg_success);
+                                }
+                                $('.content').find('.mess-send-mail').css('opacity',1);
+                                $('form#frm-contact').find('button[type=submit]').removeAttr('disabled');
+                                $('form#frm-contact')[0].reset();
+                            }, 
+                        "json");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

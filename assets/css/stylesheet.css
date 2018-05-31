@@ -1,0 +1,195 @@
+/* PAGES*/
+header .content, main.content {
+  position: relative;
+  max-width: 685px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+header .content {
+  padding-top: 1.3em;
+  padding-bottom: 1.3em;
+}
+main.content {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+.block-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.222em;
+  line-height: 1.45em;
+  font-weight: bold;
+  margin: 0;
+  color: #df7500;
+  /*text-align: right;*/
+}
+.title h2:nth-child(2) {
+  margin-bottom: 2.3em;
+}
+/* HOME PAGE */
+.home-page .page-content-wrapper {
+  background-image: url(../images/upload/home-photo.jpg);
+  background-repeat: no-repeat;
+  background-position: 80% center;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.home-page .logo {
+  top: 50%;
+}
+.logo {
+  height: 66px;
+  width: 30px;
+  margin: 0 auto;
+}
+.home-page .sidebar-wrapper{
+  background-color: #737373;
+}
+.home-page .hamburger-inner,
+.home-page .hamburger-inner::before,
+.home-page .hamburger-inner::after {
+  background: white;
+}
+/* END HOME PAGE */
+
+
+/* ABOUT US */
+.aboutus-page .sidebar-wrapper{
+  background-color: #bbebfa;
+}
+.work-title h3 {
+  margin-bottom: 39px;
+}
+/* END ABOUT US */
+
+/* CONTACT US */
+.contactus-page .sidebar-wrapper{
+  background-color: #dcddde;
+}
+.frm-contact label.error{
+  color: red;
+}
+.frm-contact .form-control.error{
+    border-color:red;
+}
+.mess-send-mail h2.block-title{
+  color: #908F8E;
+  text-align: center;
+}
+.mess-send-mail {
+  opacity: 0;
+  /*position: absolute;*/
+  /*top: 25px;*/
+  /*left: 22%;*/
+}
+/* END CONTACT US */
+/* PORT TITLE */
+.port-page .thumb {
+  position: relative;
+  text-align: center;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.port-page .thumb:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.port-page .thumb:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  /*border-radius: 5px;*/
+}
+/*.port-page .thumb:hover {
+  border-radius: 5px;
+}
+.port-page .thumb:hover img {
+  border-radius: 5px;
+}*/
+.port-page .thumb img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 100%;
+}
+.port-page .caption {
+  display: block;
+  color: #898989;
+  max-width: 100%;
+  margin: 1em auto 0;
+}
+/* END PORT TITLE */
+/*PORT BRAND INFO*/
+.brand-infor-container {
+  padding-top: 0;
+}
+.brand-infor{
+  display: block;
+  /*min-height: 4.5em;*/
+}
+.icon-infor-brand{
+  float: right;
+  width: 10%;
+  color: #dcddde;
+  font-size: 40px;
+}
+.description-infor-brand{
+  float: left;
+  width: 90%;
+  padding-top: 0.6em;
+  display: none;
+  color: #898989;
+  font-family: 'Open Sans', sans-serif;
+}
+.description-infor-brand .title-infor{
+  font-family: 'Montserrat', sans-serif;
+}
+.description-infor-brand.active{
+  display: block;
+}
+.port-brand-page .list-items .img-infor {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  padding: 1.5em 0;
+}
+.port-brand-page .list-items .img-infor img{
+  width: 100%;
+}
+.back-btn{
+  position: fixed;
+  bottom: 5%;
+  right: 12%;
+  z-index: 9999;
+  width: 34px;
+  height: 34px;
+}
+.back-btn .back{
+   display: block;
+ }
+.back-btn .back:before{
+  width: 34px;
+  height: 34px;
+  background: url("../images/icons/ico-back.png") top center no-repeat;
+  content: "";
+  display: block;
+}
+.back-btn .back:hover:before{
+  width: 34px;
+  height: 34px;
+  background: url("../images/icons/ico-back-hover.png") top center no-repeat;
+  content: "";
+  display: block;
+}
+/*END PORT BRAND INFO*/
+.form-group input, 
+.form-group textarea, 
+.form-group button {
+  border-radius: 0;
+}
